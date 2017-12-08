@@ -20,6 +20,10 @@
             android:id="@+id/nav_manage"
             android:icon="@mipmap/ic_pin_drop_black_24dp"
             android:title="Pinpoint" />
+        <item
+            android:id="@+id/nav_license"
+            android:icon="@drawable/ic_menu_send"
+            android:title="License" />
     </group>
 
     <!--<item android:title="Communicate">-->
