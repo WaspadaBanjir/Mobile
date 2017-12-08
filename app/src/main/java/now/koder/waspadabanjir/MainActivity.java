@@ -36,6 +36,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        WebView webview = (WebView) findViewById(R.id.MainWeb);
+        webview.setWebViewClient(new WebViewClient());
+        webview.addJavascriptInterface(new WebAppInterface(this), "Android");
+        WebSettings webSettings = webview.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webview.loadUrl("http://10.21.19.156/Waspada-Banjir/public/login");
     }
 
     @Override
@@ -85,11 +93,13 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_login) {
-            webview.loadUrl("https://google.com/");
+            webview.loadUrl("http://10.21.19.156/Waspada-Banjir/public/login");
         } else if (id == R.id.nav_register) {
-            webview.loadUrl("https://stackoverflow.com/");
+            webview.loadUrl("http://10.21.19.156/Waspada-Banjir/public/register");
         } else if (id == R.id.nav_report) {
-            webview.loadUrl("https://youtube.com/");
+            webview.loadUrl("http://10.21.19.156/Waspada-Banjir/public/home");
+        } else if (id == R.id.nav_manage) {
+            webview.loadUrl("http://10.21.19.156/Waspada-Banjir/public/pinpoint");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
